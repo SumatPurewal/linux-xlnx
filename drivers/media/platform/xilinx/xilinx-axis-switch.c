@@ -421,11 +421,11 @@ static int xvsw_parse_of(struct xvswitch_device *xvsw)
 
 	if (!xvsw->tdest_routing) {
 		xvsw->saxi_ctlclk = devm_clk_get(xvsw->dev,
-						 "s_axi_ctl_clk");
+						 "s_axi_ctrl_clk");
 		if (IS_ERR(xvsw->saxi_ctlclk)) {
 			ret = PTR_ERR(xvsw->saxi_ctlclk);
 			dev_err(xvsw->dev,
-				"failed to get s_axi_ctl_clk (%d)\n",
+				"failed to get s_axi_ctrl_clk (%d)\n",
 				ret);
 			return ret;
 		}
